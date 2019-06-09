@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "80%")
 ### Data
 
 - Use genotyped SNPs of UKBB with MAF > 1% and INFO > 0.99 (P = 656,060).
-- Use individuals within pairs of related individuals with Kinship > 0.1 (N = 59,532).
+- Use individuals (British, no structure) within pairs of related individuals with Kinship > 0.1 (N = 59,532).
 
 ### Phenotype
 
