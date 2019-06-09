@@ -50,6 +50,8 @@ Power increase.
 knitr::include_graphics("tmp-figures/fig5.png")
 ```
 
+What am I doing wrong?
+
 ### Correct for relatedness in standard GWAS?
 
 Random idea I had: do GWAS with one of the genotype as phenotype (excluding all other SNPs of the same chromosome) to get a sense of the impact of relatedness.
