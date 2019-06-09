@@ -1,0 +1,67 @@
+---
+title: "Simus GWAS with relatedness"
+author: "Florian Privé"
+date: "June 8, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "80%")
+```
+
+## Simu design
+
+### Data
+
+- Use genotyped SNPs of UKBB with MAF > 1% and INFO > 0.99 (P = 656,060).
+- Use individuals within pairs of related individuals with Kinship > 0.1 (N = 59,532).
+
+### Phenotype
+
+- Simulate quantitative phenotype with h2 = 0.5 and m = 50K causal variants (amongst odd chromosomes only).
+
+## Results
+
+```{r, fig.cap="Q-Q plots for standard GWAS. A: odd chromosomes. B: even chromosomes."}
+knitr::include_graphics("tmp-figures/fig1.png")
+```
+
+```{r, fig.cap="Q-Q plots for GWAS with polygenic effect. A: odd chromosomes. B: even chromosomes."}
+knitr::include_graphics("tmp-figures/fig3.png")
+```
+
+Null SNPs are inflated with standard GWAS. For GWAS with polygenic effect, even if $\lambda_{GC}$ is close to 1, the inflation for top SNPs is larger. Explanation?
+
+***
+
+```{r, fig.cap="Manhattan plot for standard GWAS.", out.width="90%"}
+knitr::include_graphics("tmp-figures/fig2.png")
+```
+
+```{r, fig.cap="Manhattan plot for GWAS with polygenic effect.", out.width="90%"}
+knitr::include_graphics("tmp-figures/fig4.png")
+```
+
+Power increase.
+
+### LDSC
+
+```{r, fig.cap="LD score regression for standard GWAS.", out.width="70%"}
+knitr::include_graphics("tmp-figures/fig5.png")
+```
+
+### Correct for relatedness in standard GWAS?
+
+Random idea I had: do GWAS with one of the genotype as phenotype (excluding all other SNPs of the same chromosome) to get a sense of the impact of relatedness.
+
+```{r, fig.cap="Q-Q plot for standard GWAS with one genotype as phenotype.", out.width="70%"}
+knitr::include_graphics("tmp-figures/fig6.png")
+```
+
+If we call this $\lambda_{GC}$ "$\lambda_{rel}$", then for a phenotype with heritability h2, it seems that $\lambda_{GC}$ = $\lambda_{rel}^{h2}$.
+
+If we apply this correction for first GWAS:
+
+```{r, fig.cap="Q-Q plots for standard GWAS corrected by $\\lambda_{rel}^{h2}$. A: odd chromosomes. B: even chromosomes."}
+knitr::include_graphics("tmp-figures/fig7.png")
+```
