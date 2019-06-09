@@ -54,7 +54,7 @@ What am I doing wrong?
 
 ### Correct for relatedness in standard GWAS?
 
-Random idea I had: do GWAS with one of the genotype as phenotype (excluding all other SNPs of the same chromosome) to get a sense of the impact of relatedness.
+Random idea I had: do GWAS with one of the genotype as phenotype (excluding all SNPs from the same chromosome) to get a sense of the impact of relatedness.
 
 ```{r, fig.cap="Q-Q plot for standard GWAS with one genotype as phenotype.", out.width="70%"}
 knitr::include_graphics("tmp-figures/fig6.png")
