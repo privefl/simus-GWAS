@@ -44,6 +44,16 @@ knitr::include_graphics("tmp-figures/fig4.png")
 
 Power increase.
 
+### BOLT-LMM
+
+```{r, fig.cap="Q-Q plots for GWAS with BOLT-LMM. A: odd chromosomes. B: even chromosomes."}
+knitr::include_graphics("tmp-figures/fig8.png")
+```
+
+```{r, fig.cap="Manhattan plot for GWAS with BOLT-LMM.", out.width="90%"}
+knitr::include_graphics("tmp-figures/fig9.png")
+```
+
 ### LDSC
 
 ```{r, fig.cap="LD score regression for standard GWAS.", out.width="70%"}
