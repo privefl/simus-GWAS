@@ -54,6 +54,13 @@ knitr::include_graphics("tmp-figures/fig8.png")
 knitr::include_graphics("tmp-figures/fig9.png")
 ```
 
+**Warning**: BOLT-LMM uses $\chi^2$ statistics and standard GWAS uses $t$ statistics, but $\lambda_{GC}(\chi^2) = (\lambda_{GC}(t))^2$.
+
+```{r, out.width="70%"}
+knitr::include_graphics("tmp-figures/fig10.png")
+```
+
+
 ### LDSC
 
 ```{r, fig.cap="LD score regression for standard GWAS.", out.width="70%"}
